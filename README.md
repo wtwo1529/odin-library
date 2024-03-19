@@ -1,1 +1,1 @@
-The Odin Project Library Project
+The Odin Project Library Project inspired by MyAnimeList.
