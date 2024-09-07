@@ -1,0 +1,50 @@
+.library-display {
+  text-align: center;
+}
+.library {
+  margin: auto;
+  width: 60%;
+  min-width: 650px;
+  border: 1px #242424 solid;
+  background-color: rgba(255, 255, 255, 0.87);
+  border-radius: 8px;
+  margin-top: 40px;
+  padding: 10px;
+  table-layout: fixed;
+}
+.library tr,
+.library th,
+.library td {
+  /* border-bottom: 1px #242424 solid; */
+}
+.library td {
+  /* border-left: 1px #242424 solid; */
+  text-align: center;
+}
+.library td {
+  font-weight: 400;
+}
+.library-header {
+  font-size: 1.4rem;
+}
+.column-header {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: left;
+}
+.btnColumn {
+  margin-left: auto;
+  width: 20px;
+}
+.book-title {
+  font-weight: 600;
+}
+.status {
+  width: 15px;
+}
+#book-index {
+  text-align: center;
+}
+.align-left {
+  text-align: left !important;
+}

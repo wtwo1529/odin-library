@@ -1,0 +1,36 @@
+.sidebar-container {
+  position: fixed;
+  top: 30%;
+  padding: 10px;
+  border: 1px black solid;
+  background-color: rgba(255, 255, 255, 0.87);
+}
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+}
+.sidebar li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#newBookBtn {
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+}
+.newBookBtnIcon {
+  width: 2.2rem;
+  background: transparent;
+  /* filter: invert(25%) sepia(67%) saturate(4573%) hue-rotate(211deg) */
+  /* brightness(102%) contrast(106%); */
+}
+
+.edit-btn {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
