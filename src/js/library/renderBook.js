@@ -51,8 +51,9 @@ export default function renderBook(
       btnColumn.classList.add("btnColumn");
       btnColumn.appendChild(btn);
       btnColumn.colSpan = 1;
-
+      libraryRow.appendChild(property);
       libraryRow.appendChild(btnColumn);
+      continue;
     } else if (prop == "pages") {
       property.colSpan = 4;
     } else if (prop == "score") {
