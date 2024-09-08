@@ -18,7 +18,8 @@ const modalHTML = document.querySelector("#modal");
 const modalForm = document.querySelector(".modal-form");
 
 let libraryHTML = document.querySelector(".library");
-let myLibrary = new Library(libraryHTML);
+let libraryDisplay = document.querySelector(".library-display");
+let myLibrary = new Library(libraryDisplay, overlay, modalHTML);
 
 let addBookModal = new Modal(
   overlay,

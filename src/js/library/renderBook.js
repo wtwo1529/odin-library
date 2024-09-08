@@ -21,7 +21,6 @@ export default function renderBook(
   index.colSpan = 1;
 
   libraryRow.appendChild(index);
-  console.log(bookObj);
   for (let prop in bookObj) {
     if (prop == "status") {
       if (bookObj[prop] == "completed") {
@@ -32,22 +31,21 @@ export default function renderBook(
         bookStatus.classList.add("dropped");
       } else if (bookObj[prop] == "reading") {
         bookStatus.classList.add("reading");
-      } else {
+      } else if (bookObj[prop] == "plantoread") {
         bookStatus.classList.add("notread");
       }
       continue;
     }
     const property = document.createElement("td");
     property.textContent = bookObj[prop];
-    console.log(property);
     if (prop == "author") {
-      property.colSpan = 6;
-      property.classList.add("align-left");
-    } else if (prop == "title") {
       property.colSpan = 5;
       property.classList.add("align-left");
+    } else if (prop == "title") {
+      property.colSpan = 6;
+      property.classList.add("align-left");
 
-      let btn = createEditBtn(overlay, modal, library);
+      let btn = createEditBtn(overlay, modal, library, bookIndex);
 
       const btnColumn = document.createElement("td");
       btnColumn.classList.add("btnColumn");
@@ -59,7 +57,7 @@ export default function renderBook(
       property.colSpan = 4;
     } else if (prop == "score") {
       property.colSpan = 2;
-    }
+    } else continue;
     libraryRow.appendChild(property);
   }
   libraryDisplay.appendChild(libraryRow);

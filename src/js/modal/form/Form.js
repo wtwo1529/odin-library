@@ -22,25 +22,24 @@ export default class Form {
   }
   validateInputs(event) {
     for (let i = 0; i < this.inputs.length; i++) {
-      console.log(this.inputs[i]);
-      if (!this.inputs[i].checkValidity()) {
-        event.preventDefault();
-        return false;
+      if (this.inputs[i].hasAttribute("required")) {
+        if (this.inputs[i].validity.valueMissing) {
+          this.inputs[i].setCustomValidity("Empty field");
+          this.inputs[i].reportValidity();
+          event.preventDefault();
+          return false;
+        }
       }
     }
-    for (let i = 0; i < this.selects.length; i++) {
-      if (!this.selects[i].checkValidity()) {
-        event.preventDefault();
-        return false;
-      }
-    }
-    console.log("hi");
     return true;
   }
   submit(modal, overlay, event) {
     if (this.validateInputs(event)) {
-      let book = submitForm(this.form);
-      this.library.addBook(overlay, modal, book);
+      let book = submitForm(this.form, this.library);
+      if (book) {
+        console.log(book);
+        this.library.addBook(book);
+      }
       closeModal(modal, overlay);
       clearInputs(this.inputs);
       resetSelects(this.selects);

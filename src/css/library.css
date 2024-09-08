@@ -25,7 +25,9 @@
   font-weight: 400;
 }
 .library-header {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
+  padding: 10px 0;
+  padding-bottom: 20px;
 }
 .column-header {
   font-size: 1.2rem;

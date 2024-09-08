@@ -3,7 +3,7 @@ import Book from "../../book/book";
 function isNumber(value) {
   return !isNaN(value) && !isNaN(parseFloat(value));
 }
-export default function submitForm(formHTML) {
+export default function submitForm(formHTML, library) {
   let inputs = formHTML.querySelectorAll("input");
   let selects = formHTML.querySelectorAll("select");
   let values = [];
@@ -24,6 +24,11 @@ export default function submitForm(formHTML) {
     }
   });
 
-  let book = new Book(...values);
-  return book;
+  if (formHTML.dataset.index) {
+    library.updateBook(parseInt(formHTML.dataset.index), values);
+    return undefined;
+  } else {
+    let book = new Book(...values);
+    return book;
+  }
 }
